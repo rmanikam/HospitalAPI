@@ -24,7 +24,7 @@ module.exports.registerDoctor = async (req, res, next) => {
 
 module.exports.registerPatient = async (req, res, next) => {
   try {
-    req.body.doctor = "66b9c673359b3e407046ae78";
+    req.body.doctor = "66b9ce8ad05d015b9d579473";
 
     const patient = await Patient.create(req.body);
 
