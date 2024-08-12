@@ -5,6 +5,7 @@ const {
   createReport,
   all_reports,
   AllReports,
+  login,
 } = require("../controllers/userController");
 const passport = require("passport");
 
