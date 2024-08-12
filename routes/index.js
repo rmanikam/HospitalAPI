@@ -6,6 +6,7 @@ const {
   all_reports,
   AllReports,
 } = require("../controllers/userController");
+const passport = require("passport");
 
 const router = express.Router();
 

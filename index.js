@@ -4,7 +4,8 @@ const router = require("./routes/index");
 
 const bodyParser = require("body-parser");
 
-const passport = require("./config/passport");
+const passport = require("passport");
+const passportStrategy = require("./config/passport");
 const db = require("./config/database");
 const app = express();
 
