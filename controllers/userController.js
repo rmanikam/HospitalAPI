@@ -21,27 +21,10 @@ module.exports.registerDoctor = async (req, res, next) => {
     });
   }
 };
-module.exports.login = async (req, res, next) => {
-  try {
-    const user = await Doctor.find(req.body);
-    if (user) {
-      const token = jwt.sign(user.id, "secret");
-
-      res.status(200).json({
-        success: true,
-        token,
-      });
-    } else {
-      res.status(404).send("name or password is invalid");
-    }
-  } catch (error) {
-    res.status(500).send("Internal Server Error");
-  }
-};
 
 module.exports.registerPatient = async (req, res, next) => {
   try {
-    req.body.doctor = "66b98419ec2a5c2a83d78eb3";
+    req.body.doctor = "66b9c673359b3e407046ae78";
 
     const patient = await Patient.create(req.body);
 
@@ -98,6 +81,24 @@ module.exports.AllReports = async (req, res, next) => {
       data: patient,
     });
   } catch (err) {
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+module.exports.login = async (req, res, next) => {
+  try {
+    const user = await Doctor.find(req.body);
+    if (user) {
+      const token = jwt.sign(user.id, "secret");
+
+      res.status(200).json({
+        success: true,
+        token,
+      });
+    } else {
+      res.status(404).send("name or password is invalid");
+    }
+  } catch (error) {
     res.status(500).send("Internal Server Error");
   }
 };

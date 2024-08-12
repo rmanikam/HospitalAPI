@@ -16,13 +16,13 @@ router.post("/doctors/register", registerDoctor);
 
 router.post(
   "/patients/register",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   registerPatient
 );
 
 router.post(
   "/patients/:id/create_report",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   createReport
 );
 
